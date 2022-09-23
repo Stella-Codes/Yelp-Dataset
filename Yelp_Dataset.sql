@@ -254,9 +254,25 @@ SELECT COUNT(*) AS LoveWordCount
 FROM Review
 WHERE text like '%love%'
 
+## OUTPUT:
+
++---------------+
+| LoveWordCount |
++---------------+
+|          1780 |
++---------------+
+
 SELECT COUNT(*) AS HateWordCount
 FROM Review
 WHERE text like '%hate%'
+
+## OUTPUT:
+
++---------------+
+| HateWordCount |
++---------------+
+|           232 |
++---------------+
 
 ## 10. Find the top 10 users with the most fans:
 
