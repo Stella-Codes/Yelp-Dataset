@@ -1,7 +1,21 @@
 # Part I: Yelp Dataset Profiling and Understanding:
 
 ## 1. Profile the data by finding the total number of records for each of the tables below:
-	
+
+i. Attribute table = 10,000
+ii. Business table = 10,000
+iii. Category table = 10,000
+iv. Checkin table = 10,000
+v. elite_years table = 10,000
+vi. friend table = 10,000
+vii. hours table = 10,000
+viii. photo table = 10,000
+ix. review table = 10,000
+x. tip table = 10,000
+xi. user table = 10,000
+
+## SQL Code:
+
 SELECT COUNT(*) AS TotalRecords
 FROM attribute
 
@@ -37,6 +51,20 @@ FROM user
 
 ## 2. Find the total distinct records using Primary or Foreign Keys:
 
+i. Business = 10,000
+ii. Hours = 1562
+iii. Category = 2643
+iv. Attribute = 1115
+v. Review = 10,000
+vi. Checkin = 493
+vii. Photo = 6493
+viii. Tip = 3979
+ix. User = 10,000
+x. Friend = 11
+xi. Elite_years = 2780
+
+## SQL Code:
+
 SELECT COUNT (DISTINCT id) AS TotalDistinctRecords
 FROM Business
 
@@ -71,7 +99,9 @@ SELECT COUNT (DISTINCT user_id) AS TotalDistinctRecords
 FROM Elite_years
 
 ## 3. Are there any columns with null values in the User table? Indicate "yes," or "no."
--- No:
+-- No.
+
+## SQL Code:
 
 SELECT *
 FROM User
@@ -97,6 +127,32 @@ OR compliment_writer IS NULL
 OR compliment_photos IS NULL;
 
 ## 4. display the smallest (minimum), largest (maximum), and average (mean) value for the following fields:
+
+i. Table: Review, Column: Stars
+	
+		min:	1	max:	5	avg: 3.7082
+		
+	
+	ii. Table: Business, Column: Stars
+	
+		min:	1	max:	5	avg: 3.6549
+		
+	
+	iii. Table: Tip, Column: Likes
+	
+		min:	0	max:	2	avg: 0.0144
+		
+	
+	iv. Table: Checkin, Column: Count
+	
+		min:	1	max:	53	avg:  1.9414
+		
+	
+	v. Table: User, Column: Review_count
+	
+		min:	0	max:	2,000	avg: 24.2995
+        
+## SQL Code:
 
 SELECT MIN(stars), MAX(stars), AVG(stars)
 FROM Review
