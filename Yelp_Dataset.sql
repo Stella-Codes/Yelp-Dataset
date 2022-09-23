@@ -57,8 +57,8 @@ iii. Category = 2643
 iv. Attribute = 1115
 v. Review = 10,000
 vi. Checkin = 493
-vii. Photo = 6493
-viii. Tip = 3979
+vii. Photo = 10,000
+viii. Tip = 537
 ix. User = 10,000
 x. Friend = 11
 xi. Elite_years = 2780
@@ -83,10 +83,10 @@ FROM Review
 SELECT COUNT (DISTINCT business_id) AS TotalDistinctRecords
 FROM Checkin
 
-SELECT COUNT (DISTINCT business_id) AS TotalDistinctRecords
+SELECT COUNT (DISTINCT id) AS TotalDistinctRecords
 FROM Photo
 
-SELECT COUNT (DISTINCT business_id) AS TotalDistinctRecords
+SELECT COUNT (DISTINCT user_id) AS TotalDistinctRecords
 FROM Tip
 
 SELECT COUNT (DISTINCT id) AS TotalDistinctRecords
@@ -171,40 +171,41 @@ FROM User
 
 ## 5. List the cities with the most reviews in descending order:
 
-SELECT City, COUNT(review_count) AS TotalReviews
+SELECT City, SUM(review_count) AS TotalReviews
 FROM Business
 GROUP BY City
-ORDER BY COUNT(review_count) DESC
+ORDER BY SUM(review_count) DESC
 
 ## OUTPUT:
 
-city            | TotalReviews |
 +-----------------+--------------+
-| Las Vegas       |         1561 |
-| Phoenix         |         1001 |
-| Toronto         |          985 |
-| Scottsdale      |          497 |
-| Charlotte       |          468 |
-| Pittsburgh      |          353 |
-| Montréal        |          337 |
-| Mesa            |          304 |
-| Henderson       |          274 |
-| Tempe           |          261 |
-| Edinburgh       |          239 |
-| Chandler        |          232 |
-| Cleveland       |          189 |
-| Gilbert         |          188 |
-| Glendale        |          188 |
-| Madison         |          176 |
-| Mississauga     |          150 |
-| Stuttgart       |          141 |
-| Peoria          |          105 |
-| Markham         |           80 |
-| Champaign       |           71 |
-| North Las Vegas |           70 |
-| North York      |           64 |
-| Surprise        |           60 |
-| Richmond Hill   |           54 |
+| city            | TotalReviews |
++-----------------+--------------+
+| Las Vegas       |        82854 |
+| Phoenix         |        34503 |
+| Toronto         |        24113 |
+| Scottsdale      |        20614 |
+| Charlotte       |        12523 |
+| Henderson       |        10871 |
+| Tempe           |        10504 |
+| Pittsburgh      |         9798 |
+| Montréal        |         9448 |
+| Chandler        |         8112 |
+| Mesa            |         6875 |
+| Gilbert         |         6380 |
+| Cleveland       |         5593 |
+| Madison         |         5265 |
+| Glendale        |         4406 |
+| Mississauga     |         3814 |
+| Edinburgh       |         2792 |
+| Peoria          |         2624 |
+| North Las Vegas |         2438 |
+| Markham         |         2352 |
+| Champaign       |         2029 |
+| Stuttgart       |         1849 |
+| Surprise        |         1520 |
+| Lakewood        |         1465 |
+| Goodyear        |         1155 |
 +-----------------+--------------+
 (Output limit exceeded, 25 of 362 total rows shown)
 
