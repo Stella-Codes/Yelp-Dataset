@@ -352,7 +352,7 @@ ORDER BY star_rating ASC
 ## i. Difference 1: Open businesses have way more reviews than the ones that are closed.
          
          
-## ii. Difference 2: Open businesses average more stars than closed buysinesses.
+## ii. Difference 2: Open businesses average more stars than closed businesses.
 
 ## SQL Code used for analysis:
 
@@ -442,8 +442,7 @@ ORDER BY AverageStars DESC
 (Output limit exceeded, 25 of 197 total rows shown)
 
 -- From this output I can now look up reviews for these business categories and understand why they have such high ratings.
--- I could go deep into the text column from the review table and perform key word searches.
-
+-- I could go deeper into the text column from the review table and perform key word searches such as 'Love and 'Hate' like earlier in the profiling portion of this worksheet.
 
 
 ## iv. Joining the Business and Category tables to establish the best balance of total businesses (at least 5), stars (at least 3.5) and reviews (at least 55):
